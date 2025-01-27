@@ -3,17 +3,16 @@ import Header from '../Header/header'
 import "./cart.css"
 import { BsPlusSquare, BsDashSquare } from 'react-icons/bs'
 import { counter } from '../Context/Context.js'
-import {Api} from "../../Api.js"
+import { Api } from "../../Api.js"
 
 const getDataFromLS = JSON.parse(localStorage.getItem("AddToCart"))
 let productsQuantity = []
 
 
-getDataFromLS.map(each => {
+getDataFromLS.forEach(each => {
   return productsQuantity.push({ id: each.id, quantity: each.count })
 })
-// console.log(productsQuantity)
-const Cart = ()=> {
+const Cart = () => {
   const { cartCount } = useContext(counter)
   // const [isLoading, setIsLoading]= useState(false)
   // window.location.reload()
@@ -45,13 +44,13 @@ const Cart = ()=> {
 
     localStorage.setItem('AddToCart', JSON.stringify(newData))
 
-    const quantityCount = productsQuantity.map(each => {
-      if (each.id === id) {
-        return { ...each, count: each.count + 1 }
-      }
-      return (each)
-    })
-    productsQuantity = quantityCount
+    // const quantityCount = productsQuantity.map(each => {
+    //   if (each.id === id) {
+    //     return { ...each, quantity: each.quantity + 1 }
+    //   }
+    //   return (each)
+    // })
+    // productsQuantity = quantityCount
     // setIsLoading(prev=>!prev)
     window.location.reload()
   }
@@ -81,17 +80,18 @@ const Cart = ()=> {
     })
     localStorage.setItem('AddToCart', JSON.stringify(newData))
 
-    const quantityCount = productsQuantity.map(each => {
-      if (each.id === id) {
-        if (each.id > 1) {
+    // const quantityCount = productsQuantity.map(each => {
+    //   if (each.id === id) {
+    //     if (each.quantity > 1) {
 
-          return { ...each, count: each.count - 1 }
-        }
-      }
-      return (each)
-    })
-    productsQuantity = quantityCount
+    //       return { ...each, quantity: each.quantity - 1 }
+    //     }
+    //   }
+    //   return (each)
+    // })
+    // productsQuantity = quantityCount
     // setIsLoading(prev=>!prev)
+
     window.location.reload()
   }
 
@@ -105,6 +105,10 @@ const Cart = ()=> {
     window.location.reload()
 
   }
+
+  
+
+  console.log(productsQuantity)
 
   return (<>
     <Header />
@@ -147,9 +151,9 @@ const Cart = ()=> {
             })}
           </div>
           : (<>
-            <div style={{display:"flex",justifyContent:"center",width:"100%",marginTop:"0px"}}>
-              
-              <img style={{height:"90vh"}} src='https://static.vecteezy.com/system/resources/previews/004/964/514/original/young-man-shopping-push-empty-shopping-trolley-free-vector.jpg' alt='Cart Empty'/>
+            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: "0px" }}>
+
+              <img style={{ height: "90vh" }} src='https://static.vecteezy.com/system/resources/previews/004/964/514/original/young-man-shopping-push-empty-shopping-trolley-free-vector.jpg' alt='Cart Empty' />
             </div>
           </>)
         }
