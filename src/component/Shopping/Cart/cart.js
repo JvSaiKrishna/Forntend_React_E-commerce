@@ -5,13 +5,15 @@ import { BsPlusSquare, BsDashSquare } from 'react-icons/bs'
 import { counter } from '../Context/Context.js'
 import { Api } from "../../Api.js"
 
-const getDataFromLS = JSON.parse(localStorage.getItem("AddToCart"))
+const getDataFromLS = JSON.parse(localStorage.getItem("AddToCart") || "[]")
 let productsQuantity = []
 
+if(getDataFromLS){
 
-getDataFromLS.forEach(each => {
-  return productsQuantity.push({ id: each.id, quantity: each.count })
-})
+  getDataFromLS.forEach(each => {
+     productsQuantity.push({ id: each.id, quantity: each.count })
+  })
+} 
 const Cart = () => {
   const { cartCount } = useContext(counter)
   // const [isLoading, setIsLoading]= useState(false)
