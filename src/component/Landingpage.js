@@ -19,9 +19,19 @@ import Registration from './Shopping/Registration/Registration'
 // import EnterToHomePage from './EnterToHomepage'
 import { counter } from './Shopping/Context/Context.js'
 
+const getDataFromLS = JSON.parse(localStorage.getItem("AddToCart"))
+let totalCount;
+if(getDataFromLS){
+    totalCount = getDataFromLS.length
+
+}
+else{
+    totalCount = 0
+}
+console.log(totalCount)
 
 const Landingpage = () => {
-    const [cartCount, setCartCount] = useState(JSON.parse(localStorage.getItem("AddToCart")).length)
+    const [cartCount, setCartCount] = useState(totalCount)
     return (
         <>
             <counter.Provider value={{ cartCount, setCartCount }}>
