@@ -111,28 +111,33 @@ export default function ProductsItemDetails() {
     const onClickAddCart = (productMoveTOCart) => {
 
         const getDataFromLocalStoreage = localStorage.getItem("AddToCart");
-        const convertToParse = getDataFromLocalStoreage &&JSON.parse(getDataFromLocalStoreage);
+        const convertToParse = JSON.parse(getDataFromLocalStoreage || "[]");
         
         let isPresent = [];
-        let newData = convertToParse.map(eachProduct=>{
-            isPresent.push(eachProduct.id ===productMoveTOCart.id)
-            if(eachProduct.id ===productMoveTOCart.id){
-                return ({...eachProduct,
-                    brand:eachProduct.brand,
-                    count:eachProduct.count+parseInt(quantity),
-                    description:eachProduct.description,
-                    id:eachProduct.id,
-                    imageUrl:eachProduct.imageUrl,
-                    price:eachProduct.price,
-                    rating:eachProduct.rating,
-                    title:eachProduct.title
-                })
-            }
-            else{
-                return (eachProduct)
+        let newData = [];
+        if(convertToParse){
+            newData = convertToParse.map(eachProduct=>{
+                isPresent.push(eachProduct.id ===productMoveTOCart.id)
+                if(eachProduct.id ===productMoveTOCart.id){
+                    return ({...eachProduct,
+                        brand:eachProduct.brand,
+                        count:eachProduct.count+parseInt(quantity),
+                        description:eachProduct.description,
+                        id:eachProduct.id,
+                        imageUrl:eachProduct.imageUrl,
+                        price:eachProduct.price,
+                        rating:eachProduct.rating,
+                        title:eachProduct.title
+                    })
+                }
+                else{
+                    return (eachProduct)
+    
+                }
+            })
 
-            }
-        })
+        }
+        
         if(isPresent.includes(true) === false){
             newData = [...newData,{...productMoveTOCart,count:parseInt(quantity)}]
         }       
