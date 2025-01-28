@@ -19,7 +19,11 @@ export default function Header() {
 
             navigate('/shopinity/login', { replace: true })
         }
-
+        
+        
+    }
+    const onClickCart = ()=>{
+        navigate('/shopinity/cart')
 
     }
     return (
@@ -43,9 +47,8 @@ export default function Header() {
                         <Link to="/Shopinity/products" className="nav-menu-item">
                             <li >Products</li>
                         </Link>
-                        <Link to="/Shopinity/cart" className="nav-menu-item">
-                            <li >Cart:{cartCount||0}</li>
-                        </Link>
+                            <li className="nav-menu-item" onClick={onClickCart}>Cart:{cartCount||0}</li>
+                        
                     </ul>
                     <button onClick={OnLogout} type="button" className="logout-desktop-btn">Logout</button>
                 </div>
@@ -62,12 +65,12 @@ export default function Header() {
                             <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png" alt="nav products" class="nav-bar-img" />
                         </li>
                     </Link>
-                    <Link to="/Shopinity/cart" className="nav-menu-item-mobile">
-                        <li >
+                    
+                        <li onClick={onClickCart} className="nav-menu-item-mobile">
                             <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png" alt="nav cart" class="nav-bar-img" />
                             <p> : {cartCount||0} </p>
                         </li>
-                    </Link>
+                    
                 </ul>
             </div>
         </nav>
