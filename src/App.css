@@ -461,6 +461,7 @@
   flex-direction: column;
   align-items: center;
   padding:10px;
+  overflow: auto;
   /* justify-content: center; */
   /* flex-wrap: wrap; */
   
@@ -470,7 +471,11 @@
   width: 45%;
   height: 160px;
   display: flex;
+  background-color:aliceblue;
+  border-radius: 10px;
+  padding: 10px;
   margin-top: 20px;
+  box-shadow: 2px 2px 9px rgb(82, 102, 105),-2px -2px 9px rgb(53, 69, 71);
   /* justify-content: center; */
   /* flex-direction: column;
   align-items: center; */
@@ -478,6 +483,17 @@
 @media screen and (max-width:767px) {
   .get-products-container{
     width: 100%;
+  }
+  
+}
+
+@media screen and (max-width:567px) {
+  .get-products-container{
+    display:flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-left: 40px;
+    /* overflow: hidden; */
   }
   
 }

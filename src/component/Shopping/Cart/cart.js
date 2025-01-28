@@ -153,9 +153,9 @@ const Cart = () => {
             })}
           </div>
           : (<>
-            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: "0px" }}>
+            <div className ='empty-cart-container' >
 
-              <img style={{ height: "90vh" }} src='https://static.vecteezy.com/system/resources/previews/004/964/514/original/young-man-shopping-push-empty-shopping-trolley-free-vector.jpg' alt='Cart Empty' />
+              <img className='empty-cart-img'  src='https://static.vecteezy.com/system/resources/previews/004/964/514/original/young-man-shopping-push-empty-shopping-trolley-free-vector.jpg' alt='Cart Empty' />
             </div>
           </>)
         }

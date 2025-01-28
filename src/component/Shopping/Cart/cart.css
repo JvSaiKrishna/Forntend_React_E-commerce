@@ -109,3 +109,21 @@
     }
     
 }
+
+.empty-cart-container{
+     display: flex;
+      justify-content: center;
+      margin-top: 0px; 
+    }
+    .empty-cart-img{ 
+    width: 100%;
+    height: 90vh;
+}
+
+@media screen and (max-width:567px) {
+    .empty-cart-img{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
