@@ -12,7 +12,7 @@
     max-width: 1110px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .home-container {
         flex-direction: row;
         justify-content: space-between;
@@ -26,7 +26,7 @@
     align-items: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .home-content {
         align-items: flex-start;
     }
@@ -41,7 +41,7 @@
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .home-heading {
         font-size: 36px;
         text-align: left;
@@ -52,7 +52,7 @@
     width: 206px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .home-mobile-img {
         display: none;
     }
@@ -68,7 +68,7 @@
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .home-description {
         font-size: 18px;
         margin-top: 0px;
@@ -76,7 +76,7 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .shop-now-button {
         width: 150px;
         font-size: 16px;
