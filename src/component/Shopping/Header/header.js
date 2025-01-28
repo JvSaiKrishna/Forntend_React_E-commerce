@@ -47,8 +47,9 @@ export default function Header() {
                         <Link to="/Shopinity/products" className="nav-menu-item">
                             <li >Products</li>
                         </Link>
-                            <li className="nav-menu-item" onClick={onClickCart}>Cart:{cartCount||0}</li>
-                        
+                        <a className="nav-menu-item" href='/shopinity/cart'> <li  onClick={onClickCart}>Cart:{cartCount||0}</li>
+                        </a>
+                           
                     </ul>
                     <button onClick={OnLogout} type="button" className="logout-desktop-btn">Logout</button>
                 </div>
@@ -65,11 +66,12 @@ export default function Header() {
                             <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png" alt="nav products" class="nav-bar-img" />
                         </li>
                     </Link>
-                    
-                        <li onClick={onClickCart} className="nav-menu-item-mobile">
+                    <a className="nav-menu-item-mobile" href='/shopinity/cart'>
+                        <li onClick={onClickCart} >
                             <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png" alt="nav cart" class="nav-bar-img" />
                             <p> : {cartCount||0} </p>
                         </li>
+                    </a>
                     
                 </ul>
             </div>
